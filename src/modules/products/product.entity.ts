@@ -1,4 +1,5 @@
-import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import { Entity, PrimaryKey, Property, ManyToOne } from '@mikro-orm/core';
+import { Order } from '../orders/order.entity';  // فایل order.entity.ts
 
 @Entity()
 export class Product {
@@ -6,20 +7,10 @@ export class Product {
   id!: string;
 
   @Property()
-  name!: string;
+  name: string;
 
-  @Property()
-  description!: string;
 
-  @Property()
-  price!: number;
-
-  @Property()
-  stock!: number;
-
-  @Property()
-  createdAt: Date = new Date();
-
-  @Property({ onUpdate: () => new Date() })
-  updatedAt: Date = new Date();
+  constructor(name: string, order: Order) {
+    this.name = name;
+  }
 }

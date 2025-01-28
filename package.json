@@ -28,6 +28,7 @@
     "@nestjs/core": "^10.0.0",
     "@nestjs/passport": "^11.0.5",
     "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/typeorm": "^11.0.0",
     "bcrypt": "^5.1.1",
     "mo": "^1.7.3",
     "passport": "^0.7.0",
@@ -74,5 +75,6 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "main": "dist/main.js" 
 }

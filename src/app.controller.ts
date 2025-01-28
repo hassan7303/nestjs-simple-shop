@@ -9,4 +9,9 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('mongo-uri')
+  getMongoDbUri(): string {
+    return this.appService.getMongoDbUri();
+  }
 }

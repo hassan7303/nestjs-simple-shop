@@ -1,26 +1,25 @@
 import { Injectable } from '@nestjs/common';
-import { EntityRepository } from '@mikro-orm/mongodb';
+import { EntityManager } from '@mikro-orm/mongodb';
 import { InjectRepository } from '@mikro-orm/nestjs';
 import { Product } from './product.entity';
 
 @Injectable()
 export class ProductsService {
   constructor(
-    @InjectRepository(Product)
-    private readonly productRepository: EntityRepository<Product>,
+    private readonly em: EntityManager, 
   ) {}
 
   async createProduct(data: Partial<Product>): Promise<Product> {
-    const product = this.productRepository.create(data);
-    await this.productRepository.persistAndFlush(product);
+    const product = this.em.create(Product, data);
+    await this.em.persistAndFlush(product); 
     return product;
   }
 
   async getProducts(): Promise<Product[]> {
-    return this.productRepository.findAll();
+    return this.em.find(Product, {});
   }
 
   async getProductById(id: string): Promise<Product | null> {
-    return this.productRepository.findOne({ id });
+    return this.em.findOne(Product, { id }); 
   }
 }

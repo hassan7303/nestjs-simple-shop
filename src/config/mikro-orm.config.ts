@@ -1,10 +1,12 @@
 import { MikroOrmModuleOptions } from '@mikro-orm/nestjs';
+import { MongoDriver } from '@mikro-orm/mongodb';
 
 const config: MikroOrmModuleOptions = {
-  type: 'mongo',
-  clientUrl: process.env.MONGO_URI || 'mongodb://localhost:27017/shop',
-  entities: ['./dist/modules/**/*.entity.js'], // فایل‌های کامپایل‌شده
-  entitiesTs: ['./src/modules/**/*.entity.ts'], // فایل‌های اصلی
+  driver: MongoDriver, // استفاده از درایور اختصاصی MongoDB
+  clientUrl: process.env.MONGODB_URI || 'mongodb://root:123@mongodb:27017/shop',
+  dbName: 'shop',
+  entities: ['./dist/modules/**/*.entity.js'],
+  entitiesTs: ['./src/modules/**/*.entity.ts'],
   debug: true,
 };
 
