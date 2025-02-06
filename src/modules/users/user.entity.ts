@@ -6,7 +6,15 @@ export class User {
   _id!: string;
 
   @Property()
-  name!: string;
+  firstName!: string;
+
+
+  @Property()
+  lastName!: string;
+
+
+  @Property()
+  phoneNumber!: string;
 
   @Property()
   email!: string;
@@ -16,5 +24,17 @@ export class User {
 
   @Property({ default: true })
   isActive: boolean = true;
+
+  @Property({ default: null })
+  profilePicture: string = null;
+
+  @Property({ type: "enum", enum: Role, default: Role.User })
+  role: Roles = null;
+
+  @Property({ default: null })
+  createdAt: Date;
+
+  @Property({ default: null })
+  updatedAt: Date;
 }
 
