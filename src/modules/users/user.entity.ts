@@ -3,13 +3,13 @@ import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
 @Entity()
 export class User {
   @PrimaryKey()
-  id!: string;
+  _id!: string;
 
   @Property()
   name!: string;
 
-  @Property({nullable: true})
-  email?: string;
+  @Property()
+  email!: string;
 
   @Property()
   password!: string;

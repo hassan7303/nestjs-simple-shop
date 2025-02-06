@@ -30,6 +30,8 @@
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/typeorm": "^11.0.0",
     "bcrypt": "^5.1.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
     "mo": "^1.7.3",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
@@ -76,5 +78,5 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   },
-  "main": "dist/main.js" 
+  "main": "dist/main.js"
 }

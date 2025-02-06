@@ -4,7 +4,7 @@ import { Order } from '../orders/order.entity';  // فایل order.entity.ts
 @Entity()
 export class Product {
   @PrimaryKey()
-  id!: string;
+  _id!: string;
 
   @Property()
   name: string;

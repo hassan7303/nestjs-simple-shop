@@ -4,7 +4,7 @@ import { Product } from '../products/product.entity'; // فرض بر این اس
 @Entity()
 export class Order {
   @PrimaryKey()
-  id!: string;
+  _id!: string;
 
   @Property()
   createdAt: Date = new Date();

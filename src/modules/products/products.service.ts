@@ -20,6 +20,6 @@ export class ProductsService {
   }
 
   async getProductById(id: string): Promise<Product | null> {
-    return this.em.findOne(Product, { id }); 
+    return this.em.findOne(Product, { _id: id }); 
   }
 }
