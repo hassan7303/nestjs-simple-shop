@@ -1,4 +1,5 @@
 import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import { Role } from './role.enun';
 
 @Entity()
 export class User {
@@ -28,8 +29,8 @@ export class User {
   @Property({ default: null })
   profilePicture: string = null;
 
-  @Property({ type: "enum", enum: Role, default: Role.User })
-  role: Roles = null;
+  @Property({ type: 'enum', default: Role.User })
+  role: Role = Role.User;
 
   @Property({ default: null })
   createdAt: Date;
