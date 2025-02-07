@@ -1,4 +1,5 @@
 import {IsEmail, IsBoolean, IsString, IsOptional} from 'class-validator';
+import { Role } from '../role.enun';
 
 export class CreateUserDto{
 
@@ -26,5 +27,9 @@ export class CreateUserDto{
     @IsOptional()
     @IsString()
     profilePicture: string;
+
+    @IsOptional()
+    @IsString()
+    role: Role;
 
 }
